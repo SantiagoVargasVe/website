@@ -1,0 +1,33 @@
+---
+import FullLogo from "./FullLogo.astro";
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1);
+const navItemClass = "font-semibold";
+const navItemClassActive = "font-bold text-white";
+---
+
+<div class="flex w-full justify-between items-center p-3 bg-orange-400">
+  <FullLogo />
+  <nav class="flex gap-3">
+    <a class={currentPath === "" ? navItemClassActive : navItemClass} href="/"
+      >Home</a
+    >
+    <a
+      class={currentPath === "portfolio" ? navItemClassActive : navItemClass}
+      href="/portfolio">Portfolio</a
+    >
+    <a
+      class={currentPath === "posts" ? navItemClassActive : navItemClass}
+      href="/posts">Posts</a
+    >
+    <a
+      class={currentPath === "about" ? navItemClassActive : navItemClass}
+      href="/about">About Me</a
+    >
+
+    <a
+      class={currentPath === "contact" ? navItemClassActive : navItemClass}
+      href="/contact">Contact me</a
+    >
+  </nav>
+</div>
