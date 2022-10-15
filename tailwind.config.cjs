@@ -6,6 +6,7 @@ module.exports = {
       fontFamily: {
         roboto: ["Roboto Mono", "monospace"],
         poppins: ["Poppins", "sans-serif"],
+        roboto_condensed: ["Roboto Condensed", "sans-serif"],
       },
     },
   },
