@@ -40,7 +40,7 @@ export default function NavBar() {
             <a href="/about">About</a>
           </li>
           <li className="border-b text-emerald-400 border-emerald-900 my-8 uppercase font-roboto">
-            <a href="/portfolio">Portfolio</a>
+            <a href="/posts">Posts</a>
           </li>
           <li className="border-b text-emerald-400 border-emerald-900 my-8 uppercase font-roboto">
             <a href="/contact">Contact me</a>

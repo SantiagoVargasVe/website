@@ -10,7 +10,7 @@ const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
 
 <div class="flex w-full justify-between items-center">
   <FullLogo />
-  <nav class="gap-4 md:flex hidden">
+  <nav class="gap-5 md:flex hidden">
     <a class={currentPath === "" ? navItemClassActive : navItemClass} href="/"
       >Home</a
     >
@@ -22,11 +22,6 @@ const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
       class={currentPath === "posts" ? navItemClassActive : navItemClass}
       href="/posts">Posts</a
     >
-    <a
-      class={currentPath === "about" ? navItemClassActive : navItemClass}
-      href="/about">About Me</a
-    >
-
     <a
       class={currentPath === "contact" ? navItemClassActive : navItemClass}
       href="/contact">Contact me</a
