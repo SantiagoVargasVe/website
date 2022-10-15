@@ -1,14 +1,16 @@
 ---
 import FullLogo from "./FullLogo.astro";
+import NavBarMobile from "./NavBarMobile";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
-const navItemClass = "font-semibold";
-const navItemClassActive = "font-bold text-white";
+const navItemClass =
+  "text-md font-thin hover:font-bold text-emerald-400 font-roboto";
+const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
 ---
 
-<div class="flex w-full justify-between items-center p-3 bg-orange-400">
+<div class="flex w-full justify-between items-center">
   <FullLogo />
-  <nav class="flex gap-3">
+  <nav class="gap-4 md:flex hidden">
     <a class={currentPath === "" ? navItemClassActive : navItemClass} href="/"
       >Home</a
     >
@@ -30,4 +32,5 @@ const navItemClassActive = "font-bold text-white";
       href="/contact">Contact me</a
     >
   </nav>
+  <NavBarMobile client:load />
 </div>

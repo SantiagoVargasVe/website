@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroHome from "../components/HeroHome.jsx";
+import HeroHome from "../components/HeroHome.astro";
 ---
 
 <BaseLayout title="Home">
-  <main class="p-3">
-    <HeroHome />
-  </main>
+  <HeroHome slot="content" />
 </BaseLayout>
