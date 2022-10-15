@@ -6,13 +6,9 @@ import "animate.css";
   <h1
     class="text-emerald-300 text-4xl font-roboto text-center font-semibold line mb-10"
   >
-    Hi, my name is Santiago Vargas and I am a
+    Hi, my name is Santiago Vargas <br /> and I am a
 
-    <span class="change-text">developer</span>
-    <span class="change-text">student</span>
-    <span class="change-text">geek</span>
-    <span class="change-text">team player</span>
-    <span class="change-text">software engineer</span>
+    <span id="change-text"></span>
   </h1>
   <img
     class="fill rounded-full w-80 aspect-square object-cover"
@@ -20,8 +16,7 @@ import "animate.css";
   />
 
   <style>
-    .change-text {
-      display: none;
+    #change-text {
       /* animation-name: bounce-in-top;
       animation-duration: 3s; */
     }
@@ -80,29 +75,46 @@ import "animate.css";
     }
   </style>
   <script>
-    const texts = document.querySelectorAll(".change-text");
-    const start = 0;
-    const end = texts.length - 1;
-    let act = 0;
-    let prev = texts.length - 1;
+    const changeText = document.getElementById("change-text");
+    let index = 0;
 
-    function performAnimation() {
-      setTimeout(() => {
-        act = act == end + 1 ? start : act;
-        const prevText = texts[prev] as HTMLElement;
-        const currentText = texts[act] as HTMLElement;
-        prevText.style.display = "none";
-        prevText.style.animationName = "none";
-        prevText.style.animationDuration = "none";
-        currentText.style.display = "inline-block";
-        currentText.style.animationName = "bounce-in-top";
-        currentText.style.animationDuration = "1s";
-        prev += 1;
-        act += 1;
-        prev = prev == end + 1 ? (prev = 0) : prev;
-        performAnimation();
-      }, 3000);
+    const setOfWords = [
+      "software engineer",
+      "student",
+      "geek",
+      "developer",
+      "team player",
+    ];
+
+    function performAnimation(text: string) {
+      return new Promise<void>(async (resolve, reject) => {
+        await addText(text);
+        await sleep(1000);
+        await deleteText(text);
+        resolve();
+      });
     }
-    performAnimation();
+    const sleep = (milliseconds: number) => {
+      return new Promise((resolve) => setTimeout(resolve, milliseconds));
+    };
+
+    async function deleteText(text: string) {
+      for (let i = 0; i < text.length; i++) {
+        changeText.innerHTML = changeText.innerHTML.slice(0, -1);
+        await sleep(100);
+      }
+    }
+
+    async function addText(text: string) {
+      for (let i = 0; i < text.length; i++) {
+        changeText.innerHTML += text[i];
+        await sleep(100);
+      }
+    }
+
+    while (true) {
+      await performAnimation(setOfWords[index]);
+      index = (index + 1) % setOfWords.length;
+    }
   </script>
 </section>
