@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function NavBar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <section className="MOBILE-MENU flex  md:hidden">
+    <section className="MOBILE-MENU flex  lg:hidden">
       <div
         className="HAMBURGER-ICON space-y-2"
         onClick={() => setIsNavOpen((prev) => !prev)} // toggle isNavOpen state on click

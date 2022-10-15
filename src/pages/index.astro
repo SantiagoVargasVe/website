@@ -1,8 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HeroHome from "../components/HeroHome.astro";
+import MyEducation from "../components/MyEducation.astro";
 ---
 
 <BaseLayout title="Home">
-  <HeroHome slot="content" />
+  <div class="flex flex-col" slot="content">
+    <HeroHome />
+    <MyEducation />
+  </div>
 </BaseLayout>
