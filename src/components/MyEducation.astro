@@ -1,0 +1,64 @@
+---
+import SectionLayout from "../layouts/SectionLayout.astro";
+---
+
+<SectionLayout title="My Education">
+  <div class="table">
+    <h4
+      class="platzi font-roboto border-b-[1px] text-slate-400 font-semibold border-teal-800"
+    >
+      Platzi
+    </h4>
+    <div class="platzi-content"></div>
+    <h4
+      class="universidad font-roboto text-slate-400 font-semibold border-b-[1px] border-teal-800"
+    >
+      University
+    </h4>
+    <div class="universidad-content"></div>
+    <h4
+      class="udemy font-roboto text-slate-400 font-semibold border-b-[1px] border-teal-800"
+    >
+      Udemy
+    </h4>
+    <div class="udemy-content"></div>
+  </div>
+
+  <style>
+    .table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 0.2fr 1.8fr;
+      grid-auto-columns: 1fr;
+      gap: 0px 15px;
+      grid-auto-flow: row;
+      grid-template-areas:
+        "platzi universidad udemy"
+        "platzi-content universidad-content udemy-content";
+    }
+
+    .platzi {
+      grid-area: platzi;
+    }
+
+    .platzi-content {
+      grid-area: platzi-content;
+    }
+
+    .universidad {
+      grid-area: universidad;
+    }
+
+    .universidad-content {
+      grid-area: universidad-content;
+    }
+
+    .udemy {
+      grid-area: udemy;
+    }
+
+    .udemy-content {
+      grid-area: udemy-content;
+    }
+  </style>
+</SectionLayout>
