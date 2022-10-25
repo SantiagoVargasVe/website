@@ -2,63 +2,106 @@
 import SectionLayout from "../layouts/SectionLayout.astro";
 ---
 
-<SectionLayout title="My Education">
-  <div class="table">
-    <h4
-      class="platzi font-roboto border-b-[1px] text-slate-400 font-semibold border-teal-800"
+<SectionLayout title="My education">
+  <div class="flex flex-col gap-3 mt-8">
+    <div
+      tabindex="0"
+      class="collapse collapse-plus border border-emerald-300 bg-slave-100 rounded-box"
     >
-      Platzi
-    </h4>
-    <div class="platzi-content"></div>
-    <h4
-      class="universidad font-roboto text-slate-400 font-semibold border-b-[1px] border-teal-800"
+      <div
+        class="collapse-title text-xl font-medium font-roboto text-emerald-500"
+      >
+        Platzi
+      </div>
+      <div
+        class="collapse-content flex flex-col gap-4 font-roboto text-slate-300"
+      >
+        <p>
+          I have been a student of platzi since 2019. In platzi I have found
+          many useful courses and a stuning comunity. I have learned from
+          fullstack development to project managment. This are some of the
+          courses I have took from them:
+        </p>
+        <ul class="list-disc pl-4">
+          <li>
+            <a
+              class="underline"
+              href="http://https://platzi.com/p/santiagovargasvega/curso/1721-gestion/diploma/detalle/"
+              target="_blank"
+              rel="noopener noreferrer">Fundamentals of project management</a
+            >
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="https://platzi.com/p/santiagovargasvega/curso/1339-fundamentos-javascript/diploma/detalle/"
+              target="_blank"
+              rel="noopener noreferrer">Fundamentals of Javascript</a
+            >
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="https://platzi.com/p/santiagovargasvega/curso/1640-course/diploma/detalle/"
+              target="_blank"
+              rel="noopener noreferrer">Frontend developer</a
+            >
+          </li>
+          <li>
+            <a
+              class="underline"
+              href="https://platzi.com/p/santiagovargasvega/curso/1651-react-ejs/diploma/detalle/"
+              target="_blank"
+              rel="noopener noreferrer">React JS</a
+            >
+          </li>
+        </ul>
+        <p>
+          You can find more courses I have done <a
+            class="underline"
+            href="https://platzi.com/p/santiagovargasvega/"
+            target="_blank"
+            rel="noopener noreferrer">here</a
+          >.
+        </p>
+      </div>
+    </div>
+
+    <div
+      tabindex="1"
+      class="collapse collapse-plus border border-emerald-300 bg-slave-100 rounded-box"
     >
-      University
-    </h4>
-    <div class="universidad-content"></div>
-    <h4
-      class="udemy font-roboto text-slate-400 font-semibold border-b-[1px] border-teal-800"
-    >
-      Udemy
-    </h4>
-    <div class="udemy-content"></div>
+      <div
+        class="collapse-title text-xl font-roboto font-medium text-emerald-500"
+      >
+        Univesidad de los Andes
+      </div>
+      <div
+        class="collapse-content font-roboto text-slate-300 flex flex-col gap-4"
+      >
+        <p>
+          I started my bachealors degree in Universidad de los Andes in the
+          first semester of 2018. During my education I worked as a teaching
+          assitant for the class Programación Orientada a Objetos I
+          (Object-oriented programming I) . This are some of the courses I took:
+        </p>
+
+        <ul class="list-disc pl-4">
+          <li>Object-oriented programming II</li>
+          <li>Design and Analysis of Algorithms</li>
+          <li>Probability and Statistics I</li>
+          <li>Programming with Web Technologies</li>
+          <li>Construction of Mobile Applications</li>
+        </ul>
+        <p>
+          For more information about Universidad de los Andes you can check its <a
+            class="underline"
+            href="https://www.topuniversities.com/universities/universidad-de-los-andes"
+            target="_blank"
+            rel="noopener noreferrer">QS Ranking profile</a
+          > which ranks it as the 5th best in LatAm.
+        </p>
+      </div>
+    </div>
   </div>
-
-  <style>
-    .table {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-template-rows: 0.2fr 1.8fr;
-      grid-auto-columns: 1fr;
-      gap: 0px 15px;
-      grid-auto-flow: row;
-      grid-template-areas:
-        "platzi universidad udemy"
-        "platzi-content universidad-content udemy-content";
-    }
-
-    .platzi {
-      grid-area: platzi;
-    }
-
-    .platzi-content {
-      grid-area: platzi-content;
-    }
-
-    .universidad {
-      grid-area: universidad;
-    }
-
-    .universidad-content {
-      grid-area: universidad-content;
-    }
-
-    .udemy {
-      grid-area: udemy;
-    }
-
-    .udemy-content {
-      grid-area: udemy-content;
-    }
-  </style>
 </SectionLayout>
