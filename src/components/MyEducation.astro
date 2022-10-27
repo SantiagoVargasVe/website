@@ -6,6 +6,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
   <div class="flex flex-col gap-3 mt-8">
     <div
       tabindex="0"
+      id="platzi"
       class="collapse collapse-plus border border-emerald-300 bg-slave-100 rounded-box"
     >
       <div
@@ -26,7 +27,8 @@ import SectionLayout from "../layouts/SectionLayout.astro";
           <li>
             <a
               class="underline"
-              href="http://https://platzi.com/p/santiagovargasvega/curso/1721-gestion/diploma/detalle/"
+              id="managment"
+              href="https://platzi.com/p/santiagovargasvega/curso/1721-gestion/diploma/detalle/"
               target="_blank"
               rel="noopener noreferrer">Fundamentals of project management</a
             >
@@ -34,6 +36,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
           <li>
             <a
               class="underline"
+              id="javascript"
               href="https://platzi.com/p/santiagovargasvega/curso/1339-fundamentos-javascript/diploma/detalle/"
               target="_blank"
               rel="noopener noreferrer">Fundamentals of Javascript</a
@@ -42,6 +45,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
           <li>
             <a
               class="underline"
+              id="frontend"
               href="https://platzi.com/p/santiagovargasvega/curso/1640-course/diploma/detalle/"
               target="_blank"
               rel="noopener noreferrer">Frontend developer</a
@@ -50,6 +54,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
           <li>
             <a
               class="underline"
+              id="react"
               href="https://platzi.com/p/santiagovargasvega/curso/1651-react-ejs/diploma/detalle/"
               target="_blank"
               rel="noopener noreferrer">React JS</a
@@ -59,6 +64,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
         <p>
           You can find more courses I have done <a
             class="underline"
+            id="platzi_link"
             href="https://platzi.com/p/santiagovargasvega/"
             target="_blank"
             rel="noopener noreferrer">here</a
@@ -69,6 +75,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
 
     <div
       tabindex="1"
+      id="university"
       class="collapse collapse-plus border border-emerald-300 bg-slave-100 rounded-box"
     >
       <div
@@ -96,6 +103,7 @@ import SectionLayout from "../layouts/SectionLayout.astro";
         <p>
           For more information about Universidad de los Andes you can check its <a
             class="underline"
+            id="QS"
             href="https://www.topuniversities.com/universities/universidad-de-los-andes"
             target="_blank"
             rel="noopener noreferrer">QS Ranking profile</a
@@ -103,5 +111,52 @@ import SectionLayout from "../layouts/SectionLayout.astro";
         </p>
       </div>
     </div>
+    <script>
+      console.log(" Esto se ejecuta");
+      const id_link = [
+        {
+          id: "managment",
+          link: "https://platzi.com/p/santiagovargasvega/curso/1721-gestion/diploma/detalle/",
+          section: "platzi",
+        },
+        {
+          id: "javascript",
+          link: "https://platzi.com/p/santiagovargasvega/curso/1339-fundamentos-javascript/diploma/detalle/",
+          section: "platzi",
+        },
+        {
+          id: "frontend",
+          link: "https://platzi.com/p/santiagovargasvega/curso/1640-course/diploma/detalle/",
+          section: "platzi",
+        },
+        {
+          id: "react",
+          link: "https://platzi.com/p/santiagovargasvega/curso/1651-react-ejs/diploma/detalle/",
+          section: "platzi",
+        },
+        {
+          id: "platzi_link",
+          link: "https://platzi.com/p/santiagovargasvega/",
+          section: "platzi",
+        },
+        {
+          id: "QS",
+          link: "https://www.topuniversities.com/universities/universidad-de-los-andes",
+          section: "university",
+        },
+      ];
+      id_link.map(({ id, section }) => {
+        document.getElementById(id).addEventListener("mouseover", () => {
+          const sectionHTML = document.getElementById(section);
+          sectionHTML.classList.add("collapse-open");
+          console.log("Ejecutando esto");
+          setTimeout(() => {
+            sectionHTML.classList.remove("collapse-open");
+            console.log("Elimine la clase");
+            sectionHTML.focus();
+          }, 1500);
+        });
+      });
+    </script>
   </div>
 </SectionLayout>
