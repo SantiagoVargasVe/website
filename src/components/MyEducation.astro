@@ -149,10 +149,10 @@ import SectionLayout from "../layouts/SectionLayout.astro";
         document.getElementById(id).addEventListener("mouseover", () => {
           const sectionHTML = document.getElementById(section);
           sectionHTML.classList.add("collapse-open");
-          console.log("Ejecutando esto");
+
           setTimeout(() => {
             sectionHTML.classList.remove("collapse-open");
-            console.log("Elimine la clase");
+
             sectionHTML.focus();
           }, 1500);
         });
