@@ -153,7 +153,8 @@ import SectionLayout from "../layouts/SectionLayout.astro";
             sectionHTML.classList.remove("collapse-open");
 
             sectionHTML.focus();
-          }, 1500);
+            sectionHTML.scrollIntoView({ block: start });
+          }, 1000);
         });
       });
     </script>
