@@ -15,6 +15,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <!-- TODO:Delete fontawesome and use static files -->
     <script
       src="https://kit.fontawesome.com/4d12e3f5ea.js"
       crossorigin="anonymous"
@@ -28,6 +29,6 @@ const { title } = Astro.props;
     <main class="lg:px-[20%]">
       <slot name="content" />
     </main>
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
