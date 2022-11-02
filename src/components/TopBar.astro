@@ -1,6 +1,5 @@
 ---
 import FullLogo from "./FullLogo.astro";
-import NavBarMobile from "./NavBarMobile";
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.slice(1);
 const navItemClass =
@@ -27,5 +26,28 @@ const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
       href="/contact">Contact me</a
     >
   </nav>
-  <NavBarMobile client:load />
+
+  <div class="dropdown lg:hidden dropdown-bottom dropdown-end">
+    <label tabindex="0" class="">
+      <svg
+        class="fill-current text-emerald-500"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 512 512"
+        ><path
+          d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z"
+        ></path>
+      </svg>
+    </label>
+    <ul
+      tabindex="0"
+      class="dropdown-content menu font-roboto p-2 font-bold text-slate-500 shadow bg-slate-800 rounded-box w-52"
+    >
+      <li><a href="#aboutme"> About me</a></li>
+      <li><a href="#myeducation">My education</a></li>
+      <li><a href="#techstack">Tech stack</a></li>
+      <li><a href="#workexperience">Work experience</a></li>
+    </ul>
+  </div>
 </div>
