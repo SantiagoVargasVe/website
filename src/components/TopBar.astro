@@ -7,7 +7,9 @@ const navItemClass =
 const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
 ---
 
-<div class="flex w-full justify-between items-center sticky top-0 bg-slate-900">
+<div
+  class="flex z-10 w-full justify-between items-center sticky top-0 bg-slate-900"
+>
   <FullLogo />
   <nav class="gap-5 lg:flex hidden">
     <a class={currentPath === "" ? navItemClassActive : navItemClass} href="/"
