@@ -9,12 +9,7 @@ export default function MyEducation() {
         My education
       </h2>
 
-      <Accordion.Root
-        className="flex flex-col gap-3"
-        type="single"
-        defaultValue="item-1"
-        collapsible
-      >
+      <Accordion.Root className="flex flex-col gap-3" type="single" collapsible>
         <Accordion.Item className="accordion-item" value="item-1">
           <Accordion.Header>
             <Accordion.Trigger className="accordion-trigger">
@@ -77,7 +72,7 @@ export default function MyEducation() {
                 </li>
               </ul>
               <p>
-                You can find more courses I have done in my
+                You can find more courses I have done in my&nbsp;
                 <a
                   class="underline"
                   id="platzi_link"
@@ -119,7 +114,7 @@ export default function MyEducation() {
               </ul>
               <p>
                 For more information about Universidad de los Andes you can
-                check its
+                check its&nbsp;
                 <a
                   class="underline"
                   id="QS"
@@ -129,7 +124,7 @@ export default function MyEducation() {
                 >
                   QS Ranking profile
                 </a>
-                which ranks it as the 5th best in LatAm.
+                &nbsp;which ranks it as the 5th best in LatAm.
               </p>
             </div>
           </Accordion.Content>
