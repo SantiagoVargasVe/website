@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroHome from "../components/HeroHome.astro";
-import AboutMe from "../components/AboutMe.astro";
-import TechStack from "../components/TechStack.astro";
-import MyEducation from "../components/MyEducation.astro";
-import WorkExperience from "../components/WorkExperience.astro";
+import HeroHome from "../components/home/HeroHome.astro";
+import AboutMe from "../components/home/AboutMe.astro";
+import TechStack from "../components/home/TechStack.astro";
+import MyEducation from "../components/home/MyEducation.jsx";
+import WorkExperience from "../components/home/WorkExperience.astro";
 ---
 
 <BaseLayout title="Home">
@@ -12,7 +12,7 @@ import WorkExperience from "../components/WorkExperience.astro";
     <HeroHome />
     <AboutMe />
     <TechStack />
-    <MyEducation />
+    <MyEducation client:load />
     <WorkExperience />
   </div>
 </BaseLayout>
