@@ -1,0 +1,25 @@
+@tailwind base;
+
+.accordion-item {
+  @apply text-emerald-500;
+  @apply rounded-lg;
+  @apply border-emerald-500;
+  @apply p-3;
+  border-width: 1px;
+}
+
+.accordion-trigger {
+  @apply flex;
+  @apply text-emerald-500;
+  @apply items-baseline;
+  @apply justify-between;
+  @apply w-full;
+  @apply text-xl;
+  @apply font-roboto;
+  @apply font-medium;
+}
+.AccordionContentText {
+  @apply mt-3;
+  @apply text-slate-300;
+  @apply font-roboto;
+}
