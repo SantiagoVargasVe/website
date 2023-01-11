@@ -16,9 +16,14 @@ export default function MyEducation() {
         collapsible
       >
         <Accordion.Item className="accordion-item" value="item-1">
-          <AccordionTrigger>Platzi</AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col gap-5">
+          <Accordion.Header>
+            <Accordion.Trigger className="accordion-trigger">
+              Platzi
+              <ChevronDownIcon aria-hidden />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Content>
+            <div className="accordion-text">
               <p>
                 I have been a platzi student since 2019. There I have found many
                 useful courses and a stunning community. I have learned from
@@ -85,13 +90,18 @@ export default function MyEducation() {
                 .
               </p>
             </div>
-          </AccordionContent>
+          </Accordion.Content>
         </Accordion.Item>
 
         <Accordion.Item className="accordion-item" value="item-2">
-          <AccordionTrigger>Universidad de los Andes</AccordionTrigger>
-          <AccordionContent>
-            <div className="flex flex-col gap-5">
+          <Accordion.Header>
+            <Accordion.Trigger className="accordion-trigger">
+              Universida de los Andes
+              <ChevronDownIcon aria-hidden />
+            </Accordion.Trigger>
+          </Accordion.Header>
+          <Accordion.Content>
+            <div className="accordion-text">
               <p>
                 I started my bachealors degree at Universidad de los Andes in
                 the first semester of 2018. During my education I worked as a
@@ -122,32 +132,9 @@ export default function MyEducation() {
                 which ranks it as the 5th best in LatAm.
               </p>
             </div>
-          </AccordionContent>
+          </Accordion.Content>
         </Accordion.Item>
       </Accordion.Root>
     </section>
   );
 }
-
-const AccordionTrigger = React.forwardRef(
-  ({ children, ...props }, forwardedRef) => (
-    <Accordion.Header>
-      <Accordion.Trigger
-        className="accordion-trigger"
-        {...props}
-        ref={forwardedRef}
-      >
-        {children}
-        <ChevronDownIcon aria-hidden />
-      </Accordion.Trigger>
-    </Accordion.Header>
-  )
-);
-
-const AccordionContent = React.forwardRef(
-  ({ children, ...props }, forwardedRef) => (
-    <Accordion.Content {...props} ref={forwardedRef}>
-      <p className="AccordionContentText">{children}</p>
-    </Accordion.Content>
-  )
-);

@@ -18,8 +18,9 @@
   @apply font-roboto;
   @apply font-medium;
 }
-.AccordionContentText {
+.accordion-text {
   @apply mt-3;
   @apply text-slate-300;
   @apply font-roboto;
+  @apply flex flex-col gap-5;
 }
