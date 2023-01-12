@@ -1,26 +1,13 @@
 @tailwind base;
 
 .accordion-item {
-  @apply text-emerald-500;
-  @apply rounded-lg;
-  @apply border-emerald-500;
-  @apply p-3;
+  @apply text-emerald-500 rounded-lg border-emerald-500 p-3;
   border-width: 1px;
 }
 
 .accordion-trigger {
-  @apply flex;
-  @apply text-emerald-500;
-  @apply items-baseline;
-  @apply justify-between;
-  @apply w-full;
-  @apply text-xl;
-  @apply font-roboto;
-  @apply font-medium;
+  @apply flex text-emerald-500 items-baseline justify-between w-full text-xl font-roboto font-medium;
 }
 .accordion-text {
-  @apply mt-3;
-  @apply text-slate-300;
-  @apply font-roboto;
-  @apply flex flex-col gap-5;
+  @apply mt-3 text-slate-300 font-roboto flex flex-col gap-5;
 }
