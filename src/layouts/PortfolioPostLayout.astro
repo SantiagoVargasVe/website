@@ -1,0 +1,37 @@
+---
+const { frontmatter } = Astro.props;
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout title={frontmatter.title}>
+  <section slot="content" class="flex flex-col gap-5">
+    <h1 class="font-roboto text-4xl text-emerald-500">{frontmatter.title}</h1>
+    <div class="content-portfolio flex flex-col gap-5">
+      {frontmatter.test}
+      <slot />
+    </div>
+  </section>
+
+  <style is:global>
+    @tailwind base;
+    .content-portfolio h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @apply text-emerald-500 font-roboto;
+    }
+
+    .content-portfolio h2 {
+      @apply text-2xl;
+    }
+
+    .content-portfolio p {
+      @apply text-slate-300 font-roboto text-base;
+    }
+
+    .content-portfolio a {
+      @apply underline cursor-pointer;
+    }
+  </style>
+</BaseLayout>

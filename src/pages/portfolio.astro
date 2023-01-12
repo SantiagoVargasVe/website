@@ -1,10 +1,53 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+const projects = await Astro.glob("./portfolio/*.md");
 ---
 
 <BaseLayout title="Portfolio">
-  <main class="p-3">
-    <h1 class="font-bold text-3xl">Portfolio</h1>
-    <p class="text-3xl text-emerald-500 font-robot">Work in progress</p>
+  <main slot="content" class="p-3">
+    <h1 class="text-emerald-500 font-bold text-3xl font-roboto mb-10">
+      Portfolio
+    </h1>
+
+    <div class="cards-container">
+      {
+        [...projects, ...projects, ...projects].map((project) => (
+          <article class="posts-cards">
+            <h3 class="font-roboto text-xl"> {project.frontmatter.title}</h3>
+            <img
+              class="card-image"
+              src={project.frontmatter.image}
+              alt="icon"
+            />
+            <p class="font-roboto text-slate-300">
+              {project.frontmatter.description}
+            </p>
+          </article>
+        ))
+      }
+    </div>
   </main>
+
+  <style>
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 50px;
+    }
+    .card-image {
+      @apply rounded-md;
+      width: 300px;
+    }
+
+    .posts-cards {
+      @apply flex flex-col gap-5;
+    }
+
+    /* Small devices (portrait tablets and large phones, 600px and up) */
+    @media only screen and (max-width: 600px) {
+      .card-image {
+        width: 300px;
+      }
+    }
+  </style>
 </BaseLayout>
