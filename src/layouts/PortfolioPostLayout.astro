@@ -29,9 +29,35 @@ import BaseLayout from "./BaseLayout.astro";
     .content-portfolio p {
       @apply text-slate-300 font-roboto text-base;
     }
+    .content-portfolio ul,
+    ol {
+      @apply text-slate-300 font-roboto text-base list-disc;
+    }
 
     .content-portfolio a {
       @apply underline cursor-pointer;
     }
+
+    code {
+      counter-reset: step;
+      counter-increment: step 0;
+    }
+    code .line::before {
+      display: inline-block;
+      content: counter(step);
+      counter-increment: step;
+      width: var(--spacing-6);
+      margin-right: 10px;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+      color: white;
+    }
+
+    /* .content-portfolio code {
+      @apply text-emerald-500;
+    }
+    .content-portfolio p:has(> code) {
+      background-color: #0d1117;
+    } */
   </style>
 </BaseLayout>

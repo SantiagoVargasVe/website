@@ -13,12 +13,16 @@ const projects = await Astro.glob("./portfolio/*.md");
       {
         [...projects, ...projects, ...projects].map((project) => (
           <article class="posts-cards">
-            <h3 class="font-roboto text-xl"> {project.frontmatter.title}</h3>
-            <img
-              class="card-image"
-              src={project.frontmatter.image}
-              alt="icon"
-            />
+            <a href={project.url}>
+              <h3 class="font-roboto text-xl"> {project.frontmatter.title}</h3>
+            </a>
+            <a href={project.url}>
+              <img
+                class="card-thumbnail"
+                src={project.frontmatter.thumbnail}
+                alt={project.frontmatter.alt}
+              />
+            </a>
             <p class="font-roboto text-slate-300">
               {project.frontmatter.description}
             </p>
@@ -34,8 +38,8 @@ const projects = await Astro.glob("./portfolio/*.md");
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 50px;
     }
-    .card-image {
-      @apply rounded-md;
+    .card-thumbnail {
+      @apply rounded-md bg-slate-800;
       width: 300px;
     }
 
@@ -44,10 +48,5 @@ const projects = await Astro.glob("./portfolio/*.md");
     }
 
     /* Small devices (portrait tablets and large phones, 600px and up) */
-    @media only screen and (max-width: 600px) {
-      .card-image {
-        width: 300px;
-      }
-    }
   </style>
 </BaseLayout>
