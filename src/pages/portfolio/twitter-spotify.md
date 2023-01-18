@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PortfolioPostLayout.astro
 title: Twitter-Spotify bot
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ultrices est. Sed risus risus, semper in ante volutpat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ultrices est. Sed risus risus, semper in ante volutpat.
+description: I built a cool bot that updates my Twitter bio with the song I'm currently playing on Spotify using Node.js, Express, Twitter and Spotify APIs!
 thumbnail: https://res.cloudinary.com/svargasv/image/upload/v1673913291/spotify-twitter_cjesan.png
 alt: thumbnail twitter spotify
 ---
