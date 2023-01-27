@@ -19,10 +19,10 @@ const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
       class={currentPath === "portfolio" ? navItemClassActive : navItemClass}
       href="/portfolio">Portfolio</a
     >
-    <a
+    <!-- <a
       class={currentPath === "posts" ? navItemClassActive : navItemClass}
       href="/posts">Posts</a
-    >
+    > -->
   </nav>
 
   <div class="dropdown lg:hidden dropdown-bottom dropdown-end">
@@ -42,7 +42,17 @@ const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
       tabindex="0"
       class="dropdown-content menu font-roboto p-2 font-bold text-slate-500 shadow bg-slate-800 rounded-box w-52"
     >
-      <li><a href="/portfolio"> Portfolio</a></li>
+      {
+        currentPath === "portfolio" ? (
+          <li>
+            <a href="/"> Home</a>
+          </li>
+        ) : (
+          <li>
+            <a href="/portfolio"> Portfolio</a>
+          </li>
+        )
+      }
       <li><a href="#aboutme"> About me</a></li>
       <li><a href="#myeducation">My education</a></li>
       <li><a href="#techstack">Tech stack</a></li>
