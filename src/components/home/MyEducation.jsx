@@ -4,7 +4,7 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "./MyEducation/styles.css";
 export default function MyEducation() {
   return (
-    <section id="education" class="mt-10 flex flex-col gap-5">
+    <section id="myeducation" class="mt-10 flex flex-col gap-5">
       <h2 class="font-roboto text-2xl font-bold text-emerald-500">
         My education
       </h2>
