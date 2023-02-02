@@ -11,7 +11,7 @@ const projects = await Astro.glob("./portfolio/*.md");
 
     <div class="cards-container">
       {
-        [...projects, ...projects, ...projects].map((project) => (
+        projects.map((project) => (
           <article class="posts-cards">
             <a href={project.url}>
               <h3 class="font-roboto text-xl"> {project.frontmatter.title}</h3>
