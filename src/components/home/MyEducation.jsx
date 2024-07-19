@@ -4,8 +4,8 @@ import { ChevronDownIcon } from "@radix-ui/react-icons";
 import "./MyEducation/styles.css";
 export default function MyEducation() {
   return (
-    <section id="myeducation" class="mt-10 flex flex-col gap-5">
-      <h2 class="font-roboto text-2xl font-bold text-emerald-500">
+    <section id="myeducation" className="mt-10 flex flex-col gap-5">
+      <h2 className="font-roboto text-2xl font-bold text-emerald-500">
         My education
       </h2>
 
@@ -25,10 +25,10 @@ export default function MyEducation() {
                 fullstack development to project managment. These are some of
                 the courses I have took from them:
               </p>
-              <ul class="list-disc pl-4">
+              <ul className="list-disc pl-4">
                 <li>
                   <a
-                    class="underline"
+                    className="underline"
                     id="managment"
                     href="https://platzi.com/p/santiagovargasvega/curso/1721-gestion/diploma/detalle/"
                     target="_blank"
@@ -39,7 +39,7 @@ export default function MyEducation() {
                 </li>
                 <li>
                   <a
-                    class="underline"
+                    className="underline"
                     id="javascript"
                     href="https://platzi.com/p/santiagovargasvega/curso/1339-fundamentos-javascript/diploma/detalle/"
                     target="_blank"
@@ -50,7 +50,7 @@ export default function MyEducation() {
                 </li>
                 <li>
                   <a
-                    class="underline"
+                    className="underline"
                     id="frontend"
                     href="https://platzi.com/p/santiagovargasvega/curso/1640-course/diploma/detalle/"
                     target="_blank"
@@ -61,7 +61,7 @@ export default function MyEducation() {
                 </li>
                 <li>
                   <a
-                    class="underline"
+                    className="underline"
                     id="react"
                     href="https://platzi.com/p/santiagovargasvega/curso/1651-react-ejs/diploma/detalle/"
                     target="_blank"
@@ -74,7 +74,7 @@ export default function MyEducation() {
               <p>
                 You can find more courses I have done in my&nbsp;
                 <a
-                  class="underline"
+                  className="underline"
                   id="platzi_link"
                   href="https://platzi.com/p/santiagovargasvega/"
                   target="_blank"
@@ -105,7 +105,7 @@ export default function MyEducation() {
                 I took:
               </p>
 
-              <ul class="list-disc pl-4">
+              <ul className="list-disc pl-4">
                 <li>Object-oriented programming II</li>
                 <li>Design and Analysis of Algorithms</li>
                 <li>Probability and Statistics I</li>
@@ -116,7 +116,7 @@ export default function MyEducation() {
                 For more information about Universidad de los Andes you can
                 check its&nbsp;
                 <a
-                  class="underline"
+                  className="underline"
                   id="QS"
                   href="https://www.topuniversities.com/universities/universidad-de-los-andes"
                   target="_blank"
