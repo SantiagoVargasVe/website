@@ -91,7 +91,7 @@ export default function MyEducation() {
         <Accordion.Item className="accordion-item" value="item-2">
           <Accordion.Header>
             <Accordion.Trigger className="accordion-trigger">
-              Universida de los Andes
+              Universidad de los Andes
               <ChevronDownIcon aria-hidden />
             </Accordion.Trigger>
           </Accordion.Header>
