@@ -1,13 +1,20 @@
 ---
 import SectionLayout from "../../layouts/SectionLayout.astro";
+import { Image } from 'astro:assets';
+
+import astroIcon from '../../assets/icons/astro-icon.webp';
+import nextjsIcon from '../../assets/icons/nextjs-icon.webp';
+import nodeIcon from '../../assets/icons/node-icon.webp';
+import reactIcon from '../../assets/icons/react-icon.webp';
+import typescriptIcon from '../../assets/icons/typescript-icon.webp';
 ---
 
 <SectionLayout id="techstack" title="Tech stack">
   <div class="flex w-full justify-around items-center gap-8 flex-wrap">
-    <img class="h-10 " src="/assets/icons/nextjs-icon.webp" alt="Nextjs" />
-    <img class="w-20" src="/assets/icons/node-icon.webp" alt="Node" />
-    <img class="h-20" src="/assets/icons/astro-icon.webp" alt="Astro" />
-    <img class="w-20" src="/assets/icons/react-icon.webp" alt="React" />
-    <img class="w-20" src="/assets/icons/typescript-icon.webp" alt="Typescript" />
+    <Image height={40} src={nextjsIcon} alt="Nextjs"  />
+    <Image width={80} src={nodeIcon} alt="Node" loading="eager" />
+    <Image height={80} src={astroIcon} alt="Astro" />
+    <Image width={80} src={ reactIcon} alt="React" />
+    <Image width={80} src={typescriptIcon} alt="Typescript" />
   </div>
 </SectionLayout>

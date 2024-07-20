@@ -1,13 +1,15 @@
 ---
-import "animate.css";
+import { Image } from 'astro:assets';
+import avatar from '../../assets/avatar.webp'
 ---
 
 <section class="mt-10 flex w-full">
   <div class="flex md:flex-row flex-col items-center gap-5 lg:gap-10">
-    <img
+    <Image
       class="fill rounded-full w-60 aspect-square object-cover"
-      src="/assets/avatar.webp"
+      src={avatar}
       alt="Santiago Vargas"
+      loading="eager"
     />
     <h1 class="text-slate-400 text-2xl font-roboto mb-10 h-12">
       Hi, my name is Santiago Vargas <br class="hidden" /> and I am a
