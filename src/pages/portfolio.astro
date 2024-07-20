@@ -1,13 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Image from "astro/components/Image.astro";
+import flutter from '../assets/thumbnails/flutter.png';
+import spotifyBot from '../assets/thumbnails/spotify-twitter.png';
+import truever from '../assets/thumbnails/truever-logo.png';
 const projects = await Astro.glob("./portfolio/*.md");
 
-const images =  projects.map(async (project)=> {
-  return  await import(`../assets/thumbnails/${project.frontmatter.thumbnail}`);
-})
-
-const imagesImports = await Promise.all(images);
+// TODO: This is a temporary solution, I will find a better way to import images if you
+// use a dinamyc import the images will not be added in the final build
+const imagesImports = [flutter, truever, spotifyBot];
 
 ---
 
@@ -27,7 +28,7 @@ const imagesImports = await Promise.all(images);
             <a href={project.url}>
               <Image
                 class="card-thumbnail"
-                src={imagesImports[idx].default}
+                src={imagesImports[idx]}
                 alt={project.frontmatter.alt}
                 loading="eager"
               />
