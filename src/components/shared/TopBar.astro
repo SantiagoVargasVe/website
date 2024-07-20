@@ -1,10 +1,24 @@
 ---
 import FullLogo from "../home/FullLogo.astro";
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1);
+const currentPath = pathname.slice(1).split('/')[0];
 const navItemClass =
   "text-md font-thin hover:font-bold text-emerald-400 font-roboto";
 const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
+
+
+const menuOptions: Array<Record<'text' | 'href', string>> = currentPath ===  'portfolio' ? [
+  { text: 'Home', href: '/' },
+  { text: 'Portfolio', href: '/portfolio' },
+] : [
+  { text: 'Portfolio', href: '/portfolio' },
+  { text: 'About me', href: '#aboutme' },
+  { text: 'My education', href: '#myeducation' },
+  { text: 'Tech stack', href: '#techstack' },
+  { text: 'Work experience', href: '#workexperience' },
+];
+
+
 ---
 
 <div
@@ -38,21 +52,14 @@ const navItemClassActive = "text-md font-bold text-emerald-300 font-roboto";
       tabindex="0"
       class="dropdown-content menu font-roboto p-2 font-bold text-slate-500 shadow bg-slate-800 rounded-box w-52"
     >
-      {
-        currentPath === "portfolio" ? (
-          <li>
-            <a href="/"> Home</a>
+
+    {
+      menuOptions.map(({ text, href }) => (
+        <li>
+          <a href={href} class={currentPath === text.toLowerCase() ? navItemClassActive : navItemClass}>{text}</a>
           </li>
-        ) : (
-          <li>
-            <a href="/portfolio"> Portfolio</a>
-          </li>
-        )
-      }
-      <li><a href="#aboutme"> About me</a></li>
-      <li><a href="#myeducation">My education</a></li>
-      <li><a href="#techstack">Tech stack</a></li>
-      <li><a href="#workexperience">Work experience</a></li>
+      ))
+    }
     </ul>
   </div>
 </div>
