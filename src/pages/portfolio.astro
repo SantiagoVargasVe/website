@@ -1,6 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Image from "astro/components/Image.astro";
 const projects = await Astro.glob("./portfolio/*.md");
+
+const images =  projects.map(async (project)=> {
+  return  await import(`../assets/thumbnails/${project.frontmatter.thumbnail}`);
+})
+
+const imagesImports = await Promise.all(images);
+
 ---
 
 <BaseLayout title="Portfolio">
@@ -11,15 +19,15 @@ const projects = await Astro.glob("./portfolio/*.md");
 
     <div class="cards-container">
       {
-        projects.map((project) => (
+        projects.map((project, idx) => (
           <article class="posts-cards">
             <a href={project.url}>
               <h3 class="font-roboto text-xl"> {project.frontmatter.title}</h3>
             </a>
             <a href={project.url}>
-              <img
+              <Image
                 class="card-thumbnail"
-                src={project.frontmatter.thumbnail}
+                src={imagesImports[idx].default}
                 alt={project.frontmatter.alt}
               />
             </a>

@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/PortfolioPostLayout.astro
 title: Community App
-description: I built a cool bot that updates my Twitter bio with the song I'm currently playing on Spotify using Node.js, Express, Twitter and Spotify APIs!
-thumbnail: https://res.cloudinary.com/svargasv/image/upload/v1673913291/spotify-twitter_cjesan.png
+description: How to change the experience of being a freshman. Create communities according to yourself and meet new people!
+thumbnail: flutter.png
 alt: thumbnail twitter spotify
 ---
 

@@ -2,7 +2,7 @@
 layout: ../../layouts/PortfolioPostLayout.astro
 title: Truever
 description: I built a cool bot that updates my Twitter bio with the song I'm currently playing on Spotify using Node.js, Express, Twitter and Spotify APIs!
-thumbnail: https://res.cloudinary.com/svargasv/image/upload/v1674013872/truever-logo_ssk0ty.png
+thumbnail: truever-logo.png
 alt: thumbnail twitter spotify
 ---
 
@@ -10,7 +10,7 @@ alt: thumbnail twitter spotify
 
 During the pandemic of COVID-19 me and my friends were really bored in ours home, in order to make something useful with the time we decided to enroll in a hackaton made by Universidad de los Andes. The problem we aimed to solve was fake news, so we came out with the idea of using a web browser extension that will categorize a new and help the reader to understand what kind of content is he/she consuming.
 
-The tecnologies we used for this project was:
+The technologies we used for this project was:
 
 - Javascript: We used javascript for the development of the extension and the landing page of the project.
 
@@ -24,11 +24,11 @@ The tecnologies we used for this project was:
 
 ## The building
 
-Choosing Javascript and Django were an easy choicem, since part of the team was experience in javascript development and the other part in python and Django. My role in the team was to build all the backend and create the database but at the and I supported the front-end part of the team.
+Choosing Javascript and Django was an easy choice, since part of the team was experience in javascript development and the other part in python and Django. My role in the team was to build all the backend and create the database but at the and I supported the front-end part of the team.
 
-During the development we faced some problems using Django rest framework, I had some experience with Django standalone but not with that package, and the documentation of it was a bit messy by that time. It's worth to mention that the learning curve of learning this package may be a bit steep so that could be the reason I was struggling with the documentation. But besides that, most of the development was straight forward, Django is really good techology to work with.
+During the development we faced some problems using Django rest framework, I had some experience with Django standalone but not with that package, and the documentation of it was a bit messy by that time. It's worth to mention that the learning curve of learning this package may be a bit steep so that could be the reason I was struggling with the documentation. But besides that, most of the development was straight forward, Django is really good technology to work with.
 
-During the development process we also added not only the categorization of the news that Robihno could give to us but we also added the posibility to have votes from the users and
+During the development process we also added not only the categorization of the news that Robihno could give to us but we also added the possibility to have votes from the users and
 
 ## The code
 
