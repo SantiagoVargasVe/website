@@ -1,4 +1,5 @@
 import { defineConfig } from "astro/config";
+import vercel from '@astrojs/vercel/serverless';
 
 // https://astro.build/config
 import react from "@astrojs/react";
@@ -7,6 +8,9 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind()],
+  adapter: vercel({
+    webAnalytics: { enabled: true }
+  }),
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
