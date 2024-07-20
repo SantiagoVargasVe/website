@@ -29,6 +29,7 @@ const imagesImports = await Promise.all(images);
                 class="card-thumbnail"
                 src={imagesImports[idx].default}
                 alt={project.frontmatter.alt}
+                loading="eager"
               />
             </a>
             <p class="font-roboto text-slate-300">
