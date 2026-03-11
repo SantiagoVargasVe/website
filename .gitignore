@@ -4,7 +4,6 @@ dist/
 
 # dependencies
 node_modules/
-.history/
 
 # logs
 npm-debug.log*
@@ -12,12 +11,17 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-
 # environment variables
 .env
 .env.production
+.env.local
 
 # macOS-specific files
 .DS_Store
 
+# vercel
 .vercel
+
+# editor
+.vscode/
+*.swp
