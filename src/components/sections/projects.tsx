@@ -1,7 +1,11 @@
-import { ArrowUpRight, Github, LockKeyhole, Server } from "lucide-react";
+import { ArrowUpRight, Github, Server, ShieldCheck } from "lucide-react";
 import { Section } from "@/components/layout/section";
 import { ProjectArt } from "@/components/project-art";
-import { projects, earlierProjects, hostedServices } from "@/data/projects";
+import {
+  projects,
+  earlierProjects,
+  homelabCapabilities,
+} from "@/data/projects";
 
 export function Projects() {
   return (
@@ -66,29 +70,22 @@ export function Projects() {
           </span>
           <h3>A small cloud of my own.</h3>
           <p>
-            I also run a collection of open-source services for everyday life.
-            Built by their communities, self-hosted and maintained by me.
+            A private, containerized platform for everyday tools and family
+            data—maintained, monitored, and protected by a secure remote-access
+            layer.
           </p>
         </div>
-        <div className="service-list">
-          {hostedServices.map((service) => (
-            <a
-              key={service.host}
-              href={`https://${service.host}.santiagovargas.co/`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="service"
-            >
+        <div className="service-list" aria-label="Home server capabilities">
+          {homelabCapabilities.map((capability) => (
+            <div key={capability.title} className="service">
               <div>
-                <strong>{service.title}</strong>
-                <span>{service.description}</span>
+                <strong>{capability.title}</strong>
+                <span>{capability.description}</span>
               </div>
               <span className="service-access">
-                <LockKeyhole size={12} />
-                {service.access}
-                <ArrowUpRight size={15} />
+                <ShieldCheck size={12} /> Private by design
               </span>
-            </a>
+            </div>
           ))}
         </div>
       </div>

@@ -67,35 +67,21 @@ export const earlierProjects: Project[] = [
   },
 ];
 
-export const hostedServices = [
+export const homelabCapabilities = [
   {
-    title: "Nextcloud",
-    description: "Files & everyday collaboration",
-    host: "cloud",
-    access: "Account required",
+    title: "Private cloud",
+    description: "Files, collaboration & family photo storage",
   },
   {
-    title: "Immich",
-    description: "A home for photos & memories",
-    host: "photos",
-    access: "Account required",
+    title: "Document tools",
+    description: "Useful workflows that keep documents at home",
   },
   {
-    title: "Stirling-PDF",
-    description: "Everyday PDF tools",
-    host: "pdf",
-    access: "Private access",
+    title: "Observability",
+    description: "Health, resource metrics & container logs",
   },
   {
-    title: "Beszel",
-    description: "Server health & metrics",
-    host: "status",
-    access: "Private access",
-  },
-  {
-    title: "Dozzle",
-    description: "Container logs at a glance",
-    host: "logs",
-    access: "Private access",
+    title: "Platform",
+    description: "Docker, private networking & automated deployments",
   },
 ];
