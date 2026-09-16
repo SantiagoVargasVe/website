@@ -38,9 +38,7 @@ interface TechIconProps {
 export function TechIcon({ name, className }: TechIconProps) {
   if (name === "claude") {
     return (
-      <ClaudeIcon
-        className={cn("select-none text-[#D97757]", className)}
-      />
+      <ClaudeIcon className={cn("select-none text-[#D97757]", className)} />
     );
   }
 

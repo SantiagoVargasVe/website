@@ -7,7 +7,7 @@ export const educationList: Education[] = [
     startYear: 2018,
     endYear: 2022,
     description:
-      "Ranked as the #1 university in Colombia and top 5 in Latin America (QS Rankings). Focused on software engineering, algorithms, and web technologies.",
+      "Studied software engineering, algorithms, and web technologies, with hands-on projects across web and mobile development.",
     courses: [
       "Object-Oriented Programming II",
       "Design and Analysis of Algorithms",
@@ -26,7 +26,7 @@ export const educationList: Education[] = [
     startYear: 2019,
     endYear: 2023,
     description:
-      "Completed multiple courses ranging from fullstack development to project management in Latin America's leading tech education platform.",
+      "Continued learning in frontend development, JavaScript, React, and project management.",
     courses: [
       "Fundamentals of Project Management",
       "Fundamentals of JavaScript",

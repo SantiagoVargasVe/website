@@ -9,8 +9,11 @@ export const Route = createRootRoute({
 function RootLayout() {
   return (
     <>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <Header />
-      <main className="mx-auto max-w-5xl px-6 pt-20">
+      <main id="main" className="shell">
         <Outlet />
       </main>
       <Footer />

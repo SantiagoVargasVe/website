@@ -1,0 +1,350 @@
+.project-art {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #2e4439;
+  border-bottom: 1px solid #272b2610;
+}
+.art-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(#ffffff30 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff30 1px, transparent 1px);
+  background-size: 28px 28px;
+  z-index: -1;
+  opacity: 0.4;
+}
+.art-cuadre {
+  background: #e2e9d9;
+}
+.art-stillroom {
+  background: #dedfe8;
+}
+.art-wishlist {
+  background: #efded7;
+}
+.art-trips {
+  background: #e9e7d3;
+}
+.ledger {
+  width: 265px;
+  padding: 22px;
+  background: #fafbf4;
+  box-shadow: 8px 12px 0 #bbc7aa60;
+  border: 1px solid #bdcbb2;
+  transform: rotate(-5deg) translateY(15px);
+  border-radius: 6px;
+}
+.mock-heading {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+.tiny-dot {
+  color: #699155;
+}
+.ledger-title {
+  font-size: 24px;
+  line-height: 1.05;
+  margin-top: 18px;
+  letter-spacing: -0.5px;
+}
+.ledger-title i {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+}
+.receipt {
+  font-size: 9px;
+  margin-top: 19px;
+}
+.receipt > span {
+  font-size: 6px;
+  letter-spacing: 0.12em;
+  color: #63775c;
+}
+.receipt > div {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+}
+.receipt b {
+  font-weight: 500;
+}
+.receipt-total {
+  border-top: 1px dashed #a8b59d;
+  padding-top: 10px;
+}
+.receipt-total b {
+  background: #dce8ce;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  text-align: center;
+}
+.photo-back {
+  position: absolute;
+  width: 230px;
+  height: 226px;
+  background: #f6f5ef;
+  transform: rotate(-9deg) translate(-15px, 5px);
+  box-shadow: 1px 4px 12px #33333312;
+}
+.photo-print {
+  width: 245px;
+  padding: 10px 10px 0;
+  background: #fffdf5;
+  transform: rotate(7deg);
+  box-shadow: 0 6px 20px #33333314;
+}
+.landscape {
+  position: relative;
+  height: 178px;
+  background: #cbd2c4;
+  overflow: hidden;
+}
+.sun {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #f2e7b6;
+  top: 25px;
+  right: 40px;
+}
+.hill {
+  position: absolute;
+  width: 260px;
+  height: 160px;
+  border-radius: 50%;
+  transform: rotate(-30deg);
+}
+.hill-back {
+  background: #8f9a7c;
+  top: 96px;
+  left: -62px;
+}
+.hill-front {
+  background: #54694f;
+  top: 117px;
+  right: -98px;
+  width: 295px;
+}
+.crop-corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #fffdf5;
+}
+.top-left {
+  top: 14px;
+  left: 14px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.bottom-right {
+  bottom: 14px;
+  right: 14px;
+  border-left: 0;
+  border-top: 0;
+}
+.photo-caption {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  padding: 12px 2px 15px;
+  letter-spacing: -0.5px;
+}
+.photo-caption span {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 9px;
+  padding-top: 4px;
+  letter-spacing: 0;
+}
+.art-stamp {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  transform: rotate(-90deg);
+  transform-origin: right bottom;
+  color: #5d6174;
+}
+.wish-note {
+  position: absolute;
+  width: 164px;
+  height: 190px;
+  background: #fff7e7;
+  left: calc(50% - 125px);
+  top: 35px;
+  transform: rotate(-10deg);
+  padding: 23px;
+  box-shadow: 0 5px 12px #65544715;
+}
+.wish-note > span:first-child {
+  font-size: 25px;
+  line-height: 1.1;
+  color: #674a41;
+  letter-spacing: -0.6px;
+}
+.wish-note i {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-weight: 400;
+}
+.wish-heart {
+  position: absolute;
+  bottom: 18px;
+  left: 24px;
+  font-size: 36px;
+  color: #aa6755;
+}
+.gift {
+  position: absolute;
+  border-radius: 4px;
+}
+.gift-one {
+  background: #b8846e;
+  width: 110px;
+  height: 112px;
+  left: calc(50% + 6px);
+  top: 117px;
+  transform: rotate(9deg);
+  box-shadow: 4px 7px 12px #664b4215;
+}
+.gift-ribbon {
+  position: absolute;
+  height: 100%;
+  width: 15px;
+  background: #eed8b4;
+  left: 42%;
+}
+.gift-ribbon:after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 14px;
+  background: #eed8b4;
+  left: -46px;
+  top: 27px;
+}
+.gift-bow {
+  position: absolute;
+  top: -39px;
+  left: 28px;
+  font-family: Georgia, serif;
+  font-size: 67px;
+  color: #b58365;
+  line-height: 1;
+}
+.gift-two {
+  background: #8d9675;
+  width: 76px;
+  height: 70px;
+  left: calc(50% + 73px);
+  top: 172px;
+  transform: rotate(-7deg);
+}
+.gift-two .gift-ribbon {
+  width: 11px;
+  background: #e8deba;
+}
+.gift-two .gift-ribbon:after {
+  width: 76px;
+  height: 10px;
+  left: -32px;
+  top: 21px;
+  background: #e8deba;
+}
+.wish-label {
+  position: absolute;
+  bottom: 21px;
+  left: 25px;
+  font-size: 7px;
+  letter-spacing: 0.15em;
+  color: #805b4e;
+}
+.travel-ticket {
+  width: 310px;
+  background: #fbfaf1;
+  border-radius: 7px;
+  padding: 20px;
+  transform: rotate(-5deg);
+  box-shadow: 8px 10px 0 #c8c3a84d;
+  border: 1px solid #d5d0b8;
+}
+.ticket-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  letter-spacing: 0.17em;
+  color: #626c4d;
+}
+.ticket-title {
+  font-size: 26px;
+  line-height: 1.15;
+  margin: 16px 0 19px;
+  letter-spacing: -0.5px;
+}
+.ticket-title i {
+  font-family: "DM Serif Display", Georgia, serif;
+  font-size: 20px;
+}
+.month-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3px;
+}
+.month-grid span {
+  background: #ececdf;
+  font-size: 7px;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 2px;
+}
+.month-grid .good-month {
+  background: #748665;
+  color: white;
+}
+.ticket-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px dashed #cccbb6;
+  margin-top: 20px;
+  padding-top: 12px;
+  font-size: 6px;
+  letter-spacing: 0.05em;
+}
+@media (max-width: 760px) {
+  .project-art {
+    height: 250px;
+  }
+  .travel-ticket {
+    width: 270px;
+  }
+  .wish-note {
+    top: 23px;
+  }
+  .gift-one {
+    top: 95px;
+  }
+  .gift-two {
+    top: 150px;
+  }
+  .ledger {
+    transform: rotate(-5deg) translateY(25px);
+  }
+}
+
+@media (max-width: 760px) {
+  .art-stamp {
+    display: none;
+  }
+}

@@ -1,44 +1,45 @@
 import { Section } from "@/components/layout/section";
+import { techStack } from "@/data/tech-stack";
 
 export function About() {
   return (
-    <Section id="about" title="About Me">
-      <div className="max-w-2xl space-y-5 text-base text-muted-foreground leading-relaxed">
-        <p>
-          My name is Santiago Vargas and I enjoy building technological
-          solutions. Software development has been my passion since I was a
-          child&mdash;back then I liked to hack things like video games and
-          install keyloggers so I could get access to my parents&apos; accounts
-          and play more games.
+    <Section
+      id="about"
+      label="02 / A little about me"
+      title="Curiosity, put to work."
+    >
+      <div className="about-grid">
+        <p className="about-lead">
+          I like understanding how things work.
+          <br />
+          <span className="serif">Then making them work better.</span>
         </p>
-        <p>
-          I&apos;m a systems and computer engineer from{" "}
-          <a
-            href="https://www.topuniversities.com/universities/universidad-de-los-andes"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-primary-400 underline decoration-primary-400/30 underline-offset-4 transition-colors hover:text-primary-300"
-          >
-            Universidad de los Andes
-          </a>
-          . I specialize in frontend development with React and TypeScript, and
-          I love creating clean, performant, and accessible web experiences.
-        </p>
-        <p>
-          Lately I&apos;ve been diving deep into the AI-assisted development
-          space&mdash;leveraging tools like{" "}
-          <a
-            href="https://claude.ai/code"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-medium text-primary-400 underline decoration-primary-400/30 underline-offset-4 transition-colors hover:text-primary-300"
-          >
-            Claude Code
-          </a>{" "}
-          and AI-powered workflows to ship faster and explore new ways of
-          building software. I&apos;m passionate about the intersection of
-          developer experience and artificial intelligence.
-        </p>
+        <div className="about-copy">
+          <p>
+            I’m a software engineer based in Bogotá, Colombia, with a degree in
+            Systems & Computer Engineering from Universidad de los Andes. My
+            work centers on React and TypeScript, with an eye for the details
+            that make an interface feel right.
+          </p>
+          <p>
+            I’ve built products across consulting, fintech, and full-stack
+            development. I enjoy connecting a clear user experience to the
+            systems that make it possible.
+          </p>
+          <p>
+            Outside work, that same curiosity shows up in personal apps and a
+            home server. I’m also exploring AI-assisted development as part of a
+            hands-on process: build, try it, refine it.
+          </p>
+          <div id="tech-stack" className="toolbox">
+            <p className="eyebrow">Tools I work with</p>
+            <div className="tags">
+              {techStack.map((tech) => (
+                <span key={tech.name}>{tech.name}</span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </Section>
   );

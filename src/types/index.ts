@@ -26,7 +26,8 @@ export interface Project {
   title: string;
   description: string;
   tags: string[];
-  image?: string;
+  category: string;
+  visual?: "cuadre" | "stillroom" | "wishlist" | "trips";
   liveUrl?: string;
   repoUrl?: string;
 }
@@ -36,4 +37,4 @@ export interface TechItem {
   icon: string;
 }
 
-export type Palette = "blue" | "teal" | "green";
+export type Theme = "light" | "dark";

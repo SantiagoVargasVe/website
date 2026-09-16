@@ -1,70 +1,124 @@
-import { motion } from "motion/react";
-import { ExternalLink, Github } from "lucide-react";
+import { ArrowUpRight, Github, LockKeyhole, Server } from "lucide-react";
 import { Section } from "@/components/layout/section";
-import { projects } from "@/data/projects";
+import { ProjectArt } from "@/components/project-art";
+import { projects, earlierProjects, hostedServices } from "@/data/projects";
 
 export function Projects() {
   return (
-    <Section id="projects" title="Projects">
-      <div className="grid gap-7 sm:grid-cols-2">
+    <Section
+      id="projects"
+      label="01 / Selected work"
+      title="Made to be used."
+      description="Personal projects that started with a simple thought: this could be a little easier."
+    >
+      <div className="project-grid">
         {projects.map((project, i) => (
-          <motion.article
-            key={project.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.4 }}
-            whileHover={{ y: -4 }}
-            className="group flex flex-col rounded-xl border border-border/50 bg-card p-7 transition-colors hover:border-primary-500/50"
-          >
-            <h3 className="font-heading text-lg font-semibold text-foreground">
-              {project.title}
-            </h3>
-
-            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-              {project.description}
-            </p>
-
-            <div className="mt-5 flex flex-wrap gap-2">
-              {project.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-primary-950/50 px-2.5 py-0.5 text-xs font-medium text-primary-300 ring-1 ring-primary-500/20"
-                >
-                  {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="mt-5 flex gap-4 border-t border-border/30 pt-4">
-              {project.liveUrl && (
+          <article className="project-card" key={project.title}>
+            {project.visual && <ProjectArt kind={project.visual} />}
+            <div className="project-copy">
+              <p className="eyebrow project-category">
+                0{i + 1} / {project.category}
+              </p>
+              <h3>
                 <a
                   href={project.liveUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary-400"
-                  aria-label={`Visit ${project.title} live site`}
                 >
-                  <ExternalLink size={14} />
-                  Live
+                  {project.title}
+                  <ArrowUpRight size={24} />
                 </a>
-              )}
+              </h3>
+              <p className="project-description">{project.description}</p>
+              <div className="tags">
+                {project.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              <div className="project-links">
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${project.title}`}
+                >
+                  Open project <ArrowUpRight size={15} />
+                </a>
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} source code`}
+                  >
+                    <Github size={15} /> Source
+                  </a>
+                )}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+      <div className="homelab">
+        <div className="homelab-intro">
+          <span className="eyebrow">
+            <Server size={15} /> The home server
+          </span>
+          <h3>A small cloud of my own.</h3>
+          <p>
+            I also run a collection of open-source services for everyday life.
+            Built by their communities, self-hosted and maintained by me.
+          </p>
+        </div>
+        <div className="service-list">
+          {hostedServices.map((service) => (
+            <a
+              key={service.host}
+              href={`https://${service.host}.santiagovargas.co/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="service"
+            >
+              <div>
+                <strong>{service.title}</strong>
+                <span>{service.description}</span>
+              </div>
+              <span className="service-access">
+                <LockKeyhole size={12} />
+                {service.access}
+                <ArrowUpRight size={15} />
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+      <details className="archive">
+        <summary>
+          Earlier explorations{" "}
+          <span>
+            {earlierProjects.length} projects <span aria-hidden="true">＋</span>
+          </span>
+        </summary>
+        <div className="archive-grid">
+          {earlierProjects.map((project) => (
+            <article key={project.title}>
+              <p className="eyebrow">{project.category}</p>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
               {project.repoUrl && (
                 <a
+                  className="text-link"
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary-400"
-                  aria-label={`View ${project.title} source code`}
                 >
-                  <Github size={14} />
-                  Code
+                  Source code <ArrowUpRight size={14} />
                 </a>
               )}
-            </div>
-          </motion.article>
-        ))}
-      </div>
+            </article>
+          ))}
+        </div>
+      </details>
     </Section>
   );
 }

@@ -25,3 +25,8 @@ pnpm-debug.log*
 # editor
 .vscode/
 *.swp
+
+# generated verification files
+*.tsbuildinfo
+playwright-report/
+test-results/

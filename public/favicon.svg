@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="6" fill="#3b82f6"/>
-  <text x="50%" y="52%" dominant-baseline="central" text-anchor="middle" fill="white" font-family="system-ui" font-weight="700" font-size="18">SV</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#f1ce58"/><path d="M32 10v44M10 32h44M16.5 16.5l31 31m0-31-31 31" stroke="#252923" stroke-width="7"/></svg>
