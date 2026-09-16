@@ -1,85 +1,64 @@
-import { motion } from "motion/react";
-import { useTypewriter } from "@/hooks/use-typewriter";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import avatarUrl from "@/assets/avatar.webp";
 
-const WORDS = [
-  "software engineer",
-  "problem solver",
-  "team player",
-  "frontend specialist",
-  "lifelong learner",
-];
-
 export function Hero() {
-  const typedText = useTypewriter({ words: WORDS });
-
   return (
-    <section
-      id="hero"
-      className="flex min-h-[80vh] flex-col items-center justify-center gap-10 py-20 md:flex-row md:gap-16"
-    >
-      <motion.img
-        src={avatarUrl}
-        alt="Santiago Vargas"
-        width={220}
-        height={220}
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.5 }}
-        className="aspect-square w-44 rounded-full object-cover ring-4 ring-primary-500/30 md:w-56"
-      />
-
-      <div className="text-center md:text-left">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="mb-2 text-sm font-medium tracking-wider text-primary-400 uppercase"
-        >
-          Hi there, I&apos;m
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="font-heading text-4xl font-bold text-foreground md:text-5xl lg:text-6xl"
-        >
-          Santiago Vargas
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="mt-5 text-lg text-muted-foreground md:text-xl"
-        >
-          I&apos;m a{" "}
-          <span className="font-mono font-medium text-primary-400">
-            {typedText}
-            <span className="animate-pulse">|</span>
+    <section id="hero" className="hero">
+      <div className="hero-topline">
+        <span className="eyebrow">
+          <span className="status-dot" /> Software engineer · Bogotá, CO
+        </span>
+        <span className="edition">A personal corner of the internet</span>
+      </div>
+      <div className="hero-grid">
+        <div>
+          <p className="hero-intro">Hey, I’m Santiago.</p>
+          <h1>
+            Thoughtful software.
+            <br />
+            <span className="serif">Useful little things.</span>
+          </h1>
+          <p className="hero-description">
+            I build web experiences for work, and tools for the everyday. A mix
+            of frontend craft, curiosity, and seeing things through.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#projects">
+              Explore my work <ArrowDown size={17} />
+            </a>
+            <a className="text-link" href="#about">
+              A little about me <ArrowUpRight size={17} />
+            </a>
+          </div>
+        </div>
+        <div className="portrait-composition">
+          <span className="portrait-spark" aria-hidden="true">
+            ✳
           </span>
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-8 flex flex-wrap justify-center gap-4 md:justify-start"
-        >
-          <a
-            href="#projects"
-            className="rounded-lg bg-primary-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary-500"
-          >
-            View Projects
-          </a>
-          <a
-            href="#experience"
-            className="rounded-lg border border-border px-6 py-3 text-sm font-medium text-muted-foreground transition-colors hover:border-primary-500 hover:text-foreground"
-          >
-            My Experience
-          </a>
-        </motion.div>
+          <div className="portrait-frame">
+            <img
+              src={avatarUrl}
+              alt="Santiago Vargas"
+              width="340"
+              height="400"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="portrait-note">
+            <span className="status-dot" /> Based in Bogotá.
+            <br />
+            <span>Building for anywhere.</span>
+          </div>
+          <span className="portrait-caption">ENGINEER / CURIOUS HUMAN</span>
+        </div>
+      </div>
+      <div className="hero-bottom">
+        <span>
+          Currently a Senior Engineer at <strong>Slalom</strong>
+        </span>
+        <a href="#projects">
+          Scroll to discover <ArrowDown size={14} />
+        </a>
       </div>
     </section>
   );

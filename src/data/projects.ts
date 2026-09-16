@@ -2,29 +2,100 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    title: "Speaking Samba",
+    title: "Cuadre",
+    category: "Shared expenses",
+    visual: "cuadre",
     description:
-      "A science-based language learning app for Brazilian Portuguese featuring a 12-month roadmap, daily tasks, progress tracking, and spaced repetition flashcards.",
-    tags: ["React", "TypeScript", "Language Learning", "Spaced Repetition"],
-    liveUrl: "https://samba.santiagovargas.co/",
+      "Enjoy the trip. Settle up simply. A shared ledger for group expenses, with flexible splits, multiple currencies, and fewer transfers at the end.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL"],
+    liveUrl: "https://cuadre.santiagovargas.co/",
+    repoUrl: "https://github.com/SantiagoVargasVe/cuadre",
   },
   {
-    title: "Truever",
+    title: "Stillroom",
+    category: "Creative tools",
+    visual: "stillroom",
     description:
-      "A browser extension that detects fake news using AI. Built during a hackathon at Universidad de los Andes, it crawls news content and categorizes articles as fake, biased, or clickbait.",
-    tags: ["JavaScript", "Django", "PostgreSQL", "AI", "Browser Extension"],
+      "A little room for your images. Crop and adjust photos, develop RAW files, or capture a frame from a video. Your media stays in your browser.",
+    tags: ["React", "WebAssembly", "Browser-local"],
+    liveUrl: "https://stillroom.santiagovargas.co/",
+    repoUrl: "https://github.com/SantiagoVargasVe/stillroom",
+  },
+  {
+    title: "Wishlist",
+    category: "Thoughtful gifting",
+    visual: "wishlist",
+    description:
+      "Less guessing, better gifts. Collect things you love, share a list, and coordinate with friends and family without spoiling the surprise.",
+    tags: ["Next.js", "TypeScript", "PostgreSQL"],
+    liveUrl: "https://wish.santiagovargas.co/",
+    repoUrl: "https://github.com/SantiagoVargasVe/wishlist",
+  },
+  {
+    title: "Viajes",
+    category: "Travel planning",
+    visual: "trips",
+    description:
+      "The right place, at the right time. Explore a month-by-month guide to 30 regions across nine destinations, then find flights from your home airport.",
+    tags: ["Interactive guide", "JavaScript", "Self-hosted"],
+    liveUrl: "https://trips.santiagovargas.co/",
+  },
+];
+
+export const earlierProjects: Project[] = [
+  {
+    title: "Truever",
+    category: "Hackathon project",
+    description:
+      "An AI-assisted browser extension exploring how to identify misleading news, built at Universidad de los Andes.",
+    tags: ["JavaScript", "Django"],
   },
   {
     title: "Community App",
+    category: "University project",
     description:
-      "A Flutter mobile app that helps first-semester university students form support networks through interest-based communities with real-time chat, feeds, and event calendars.",
-    tags: ["Flutter", "Firebase", "Dart", "Material Design", "Real-time"],
+      "A Flutter app helping new university students find their people through shared interests, chat, and events.",
+    tags: ["Flutter", "Firebase"],
   },
   {
-    title: "Twitter-Spotify Bot",
+    title: "Twitter–Spotify Bot",
+    category: "API experiment",
     description:
-      "A Node.js bot that automatically updates your Twitter bio with the song currently playing on Spotify, mimicking the classic MSN Messenger feature.",
-    tags: ["Node.js", "Express", "Twitter API", "Spotify API"],
+      "A small nod to MSN Messenger: a bot that shared your currently playing Spotify track in your Twitter bio.",
+    tags: ["Node.js", "Spotify API"],
     repoUrl: "https://github.com/santiagovargasve/spotify-twitter-bot",
+  },
+];
+
+export const hostedServices = [
+  {
+    title: "Nextcloud",
+    description: "Files & everyday collaboration",
+    host: "cloud",
+    access: "Account required",
+  },
+  {
+    title: "Immich",
+    description: "A home for photos & memories",
+    host: "photos",
+    access: "Account required",
+  },
+  {
+    title: "Stirling-PDF",
+    description: "Everyday PDF tools",
+    host: "pdf",
+    access: "Private access",
+  },
+  {
+    title: "Beszel",
+    description: "Server health & metrics",
+    host: "status",
+    access: "Private access",
+  },
+  {
+    title: "Dozzle",
+    description: "Container logs at a glance",
+    host: "logs",
+    access: "Private access",
   },
 ];

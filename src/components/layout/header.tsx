@@ -1,100 +1,75 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
-import { useActiveSection } from "@/hooks/use-active-section";
+import { useRef, useState } from "react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { ThemeSwitcher } from "@/components/theme-switcher";
-import { cn } from "@/lib/utils";
+import { useActiveSection } from "@/hooks/use-active-section";
+import { socialLinks } from "@/data/social";
 
-const NAV_ITEMS = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#tech-stack" },
-  { label: "Experience", href: "#experience" },
-  { label: "Education", href: "#education" },
-  { label: "Projects", href: "#projects" },
-] as const;
-
+const items = [
+  { label: "Projects", id: "projects" },
+  { label: "About", id: "about" },
+  { label: "Experience", id: "experience" },
+];
 export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
-  const activeSection = useActiveSection();
-
+  const [open, setOpen] = useState(false);
+  const toggle = useRef<HTMLButtonElement>(null);
+  const active = useActiveSection();
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-md">
-      <nav
-        className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4"
-        aria-label="Main navigation"
-      >
+    <header
+      className="site-header"
+      onKeyDown={(event) => {
+        if (event.key === "Escape" && open) {
+          setOpen(false);
+          toggle.current?.focus();
+        }
+      }}
+    >
+      <nav className="shell nav" aria-label="Main navigation">
         <a
+          className="wordmark"
           href="#hero"
-          className="font-heading text-lg font-bold text-primary-400 transition-colors hover:text-primary-300"
+          onClick={() => setOpen(false)}
+          aria-label="Santiago Vargas, home"
         >
-          SV
+          sv<span>✳</span>
         </a>
-
-        {/* Desktop nav */}
-        <ul className="hidden items-center gap-1 md:flex" role="list">
-          {NAV_ITEMS.map(({ label, href }) => {
-            const sectionId = href.slice(1);
-            const isActive = activeSection === sectionId;
-            return (
-              <li key={href}>
-                <a
-                  href={href}
-                  className={cn(
-                    "rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                    isActive
-                      ? "text-primary-400"
-                      : "text-muted-foreground hover:text-foreground",
-                  )}
-                >
-                  {label}
-                </a>
-              </li>
-            );
-          })}
-          <li>
-            <ThemeSwitcher />
-          </li>
-        </ul>
-
-        {/* Mobile toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="desktop-nav">
+          {items.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              aria-current={active === item.id ? "location" : undefined}
+            >
+              {item.label}
+            </a>
+          ))}
+          <a className="nav-contact" href={socialLinks[2].url}>
+            Let’s talk <ArrowUpRight size={15} />
+          </a>
+        </div>
+        <div className="nav-controls">
           <ThemeSwitcher />
           <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="rounded-md p-2 text-muted-foreground transition-colors hover:text-foreground"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
+            ref={toggle}
+            className="menu-toggle icon-button"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            onClick={() => setOpen(!open)}
           >
-            {isOpen ? <X size={20} /> : <Menu size={20} />}
+            {open ? <X size={21} /> : <Menu size={21} />}
           </button>
         </div>
       </nav>
-
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.ul
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="overflow-hidden border-t border-border/50 md:hidden"
-            role="list"
-          >
-            {NAV_ITEMS.map(({ label, href }) => (
-              <li key={href}>
-                <a
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                  className="block px-6 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </motion.ul>
-        )}
-      </AnimatePresence>
+      <div id="mobile-navigation" className="mobile-nav" hidden={!open}>
+        {items.map((item) => (
+          <a key={item.id} href={`#${item.id}`} onClick={() => setOpen(false)}>
+            {item.label}
+          </a>
+        ))}
+        <a href={socialLinks[2].url} onClick={() => setOpen(false)}>
+          Let’s talk <ArrowUpRight size={15} />
+        </a>
+      </div>
     </header>
   );
 }

@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
-import { TechStack } from "@/components/sections/tech-stack";
 import { Experience } from "@/components/sections/experience";
 import { Education } from "@/components/sections/education";
 import { Projects } from "@/components/sections/projects";
@@ -14,11 +13,10 @@ function HomePage() {
   return (
     <>
       <Hero />
+      <Projects />
       <About />
-      <TechStack />
       <Experience />
       <Education />
-      <Projects />
     </>
   );
 }
