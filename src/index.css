@@ -492,10 +492,6 @@ h2 {
   color: var(--muted);
   white-space: nowrap;
 }
-.service:hover strong {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 .archive {
   margin-top: 35px;
 }

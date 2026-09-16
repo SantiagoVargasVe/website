@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
 
-test("current projects and hosted services replace Samba, without the excluded blog", async ({
+test("current projects replace Samba while private services stay undisclosed", async ({
   page,
 }) => {
   const errors: string[] = [];
@@ -18,10 +18,22 @@ test("current projects and hosted services replace Samba, without the excluded b
       page.getByRole("link", { name: `Open ${name}`, exact: true }),
     ).toHaveAttribute("href", `https://${host}.santiagovargas.co/`);
   }
-  for (const host of ["cloud", "photos", "pdf", "status", "logs"]) {
-    await expect(
-      page.locator(`a[href="https://${host}.santiagovargas.co/"]`),
-    ).toBeVisible();
+  await expect(page.getByLabel("Home server capabilities")).toBeVisible();
+  await expect(page.getByText("Private cloud", { exact: true })).toBeVisible();
+  await expect(page.getByText("Observability", { exact: true })).toBeVisible();
+  await expect(
+    page.locator(
+      'a[href*="cloud.santiagovargas.co"], a[href*="photos.santiagovargas.co"], a[href*="pdf.santiagovargas.co"], a[href*="status.santiagovargas.co"], a[href*="logs.santiagovargas.co"]',
+    ),
+  ).toHaveCount(0);
+  for (const service of [
+    "Nextcloud",
+    "Immich",
+    "Stirling-PDF",
+    "Beszel",
+    "Dozzle",
+  ]) {
+    await expect(page.getByText(service, { exact: true })).toHaveCount(0);
   }
   await expect(
     page.locator('a[href*="samba"], a[href*="notasdefondo"]'),

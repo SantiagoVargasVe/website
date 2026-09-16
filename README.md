@@ -22,7 +22,7 @@ The browser suite runs against a production build on desktop and mobile. It chec
 
 ## Content
 
-- `src/data/projects.ts`: four personal apps, earlier explorations, and five separately attributed self-hosted services. Account and access requirements are labeled; the site does not grant access.
+- `src/data/projects.ts`: four public personal apps, earlier explorations, and a capability-level overview of the private home server. Private service names and hostnames are deliberately omitted.
 - `src/data/experience.ts`, `education.ts`, and `social.ts`: biography and contact details.
 - `src/components/project-art.tsx` and `src/project-art.css`: decorative illustrations with fictional sample content, not product screenshots or user data.
 - `src/index.css`: layout, responsive breakpoints, theme tokens, and reduced-motion rules.
